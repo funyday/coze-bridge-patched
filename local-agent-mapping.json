@@ -1,6 +1,6 @@
 {
-  "7659331842738290953": "it-engineer",
-  "7647145924141089059": "cybersec-manager",
-  "7659332122796294450": "cs-approver",
-  "7659332465185669403": "cs-assistant"
+  "<coze-agent-id-1>": "cybersec-manager",
+  "<coze-agent-id-2>": "it-engineer",
+  "<coze-agent-id-3>": "cs-approver",
+  "<coze-agent-id-4>": "cs-assistant"
 }

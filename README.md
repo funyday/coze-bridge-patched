@@ -19,32 +19,36 @@
 - `h.opts.cwd` 是v3 patch设置的正确CWD
 - 确保 `session/new` 和 `session/load` 都使用正确的workspace路径
 
-## Agent映射表
-| Coze云端Agent ID | 显示名称 | OpenClaw Agent ID |
+## Agent映射表（示例）
+| Coze云端Agent ID | 角色说明 | OpenClaw Agent ID |
 |---|---|---|
-| 7659331842738290953 | 果子IT工程师 | it-engineer |
-| 7647145924141089059 | 果子-网络安全项目经理 | cybersec-manager |
-| 7659332122796294450 | 果子网络安全审批人 | cs-approver |
-| 7659332465185669403 | 果子网络安全顾问 | cs-assistant |
+| `<coze-agent-id-1>` | 网络安全项目经理 | cybersec-manager |
+| `<coze-agent-id-2>` | IT工程师 | it-engineer |
+| `<coze-agent-id-3>` | 安全审批人 | cs-approver |
+| `<coze-agent-id-4>` | 安全顾问 | cs-assistant |
+
+> 实际使用时，将 `<coze-agent-id-N>` 替换为 Coze 云端 Agent 的真实 ID。
 
 ## 文件说明
 | 文件 | 说明 |
 |---|---|
-| lib/index.js | v3+v4 patched bridge lib (506,125 bytes) |
-| lib/index.js.bak | 原始未修改备份 |
-| local-agent-mapping.json | Agent映射配置文件 |
-| test-acp.js | ACP协议测试脚本 |
+| lib/index.js | v3+v4 patched bridge lib (506,122 bytes) |
+| lib/index.js.bak | 原始未修改备份 (505,789 bytes) |
+| lib/package.json | 原始 package.json |
+| local-agent-mapping.json | Agent映射配置模板 |
 
 ## 部署步骤
 1. 停止现有daemon: `coze-bridge stop`
 2. 备份原始lib: `cp lib/index.js lib/index.js.bak`
 3. 替换lib: `cp patched/lib/index.js lib/index.js`
 4. 部署映射文件: `cp local-agent-mapping.json ~/.coze/local-agent-mapping.json`
-5. 清除所有agent的持久化会话（config.json中sessions字段设为`{}`）
-6. 重启daemon: `coze-bridge stop`（supervisor自动重启）
+5. 编辑映射文件，填入真实的 Coze Agent ID 和 OpenClaw Agent ID
+6. 清除所有agent的持久化会话（config.json中sessions字段设为`{}`）
+7. 重启daemon: `coze-bridge stop`（supervisor自动重启）
 
 ## 注意事项
 - daemon由launchd supervisor管理，`kill`无效，必须用`coze-bridge stop`
 - 映射文件路径: `~/.coze/local-agent-mapping.json`，daemon不会修改此文件
 - `localAgentId`必须在pairing之后添加（pair时会重写config.json）
 - 编辑config.json必须用vim/VS Code/nano，禁止用Mac自带文本编辑器（弯引号问题）
+- 仓库中不包含任何敏感配置（config.json、pat-token、bridge.token 已通过 .gitignore 排除）
