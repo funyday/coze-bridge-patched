@@ -1,6 +1,6 @@
 {
-  "<coze-agent-id-1>": "cybersec-manager",
-  "<coze-agent-id-2>": "it-engineer",
-  "<coze-agent-id-3>": "cs-approver",
-  "<coze-agent-id-4>": "cs-assistant"
+  "<coze-agent-id-1>": "<openclaw-agent-id-1>",
+  "<coze-agent-id-2>": "<openclaw-agent-id-2>",
+  "<coze-agent-id-3>": "<openclaw-agent-id-3>",
+  "<coze-agent-id-4>": "<openclaw-agent-id-4>"
 }

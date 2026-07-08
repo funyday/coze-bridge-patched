@@ -22,10 +22,10 @@
 ## Agent映射表（示例）
 | Coze云端Agent ID | 角色说明 | OpenClaw Agent ID |
 |---|---|---|
-| `<coze-agent-id-1>` | 网络安全项目经理 | cybersec-manager |
-| `<coze-agent-id-2>` | IT工程师 | it-engineer |
-| `<coze-agent-id-3>` | 安全审批人 | cs-approver |
-| `<coze-agent-id-4>` | 安全顾问 | cs-assistant |
+| `<coze-agent-id-1>` | Agent角色A | `<openclaw-agent-id-1>` |
+| `<coze-agent-id-2>` | Agent角色B | `<openclaw-agent-id-2>` |
+| `<coze-agent-id-3>` | Agent角色C | `<openclaw-agent-id-3>` |
+| `<coze-agent-id-4>` | Agent角色D | `<openclaw-agent-id-4>` |
 
 > 实际使用时，将 `<coze-agent-id-N>` 替换为 Coze 云端 Agent 的真实 ID。
 
