@@ -1,0 +1,16 @@
+# Sensitive files - DO NOT commit
+config.json
+pat-token
+bridge.token
+agent-env.json
+*.env
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
